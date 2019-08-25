@@ -37,11 +37,15 @@ public class Movement : MonoBehaviour
     /// </summary>
     private void FixedUpdate()
     {
-        //The destination
-        Vector3 destination = GetInput();
-        destination = destination.normalized * Time.fixedDeltaTime * GameHandler.Instance.speed;
+        //Check if player can move
+        if (GameHandler.Instance.canMove)
+        {
+            //The destination
+            Vector3 destination = GetInput();
+            destination = destination.normalized * Time.fixedDeltaTime * GameHandler.Instance.speed;
 
-        //Move the player
-        rb.MovePosition(destination + transform.position);
+            //Move the player
+            rb.MovePosition(destination + transform.position);
+        }
     }
 }

@@ -5,4 +5,7 @@ public class GameHandler : Singleton<GameHandler>
 {
     //The speed
     public float speed;
+
+    //Check if it can move
+    public bool canMove = true;
 }
