@@ -1,11 +1,14 @@
-﻿using UnityEngine;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 //The base class for game progression
 public class GameHandler : Singleton<GameHandler>
 {
     //The speed
-    public float speed;
+    public float speed = 5f;
+
+    //The jump speed
+    public float jumpForce = 100f;
 
     //Check if it can move
     public bool canMove = true;
